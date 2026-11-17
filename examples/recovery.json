@@ -1,0 +1,59 @@
+{
+  "mode": "offline_fixture_planner_with_real_sqlite_transactions",
+  "production": false,
+  "llm_called": false,
+  "before_review": "idle",
+  "crash_injected": true,
+  "tickets_after_crash": 1,
+  "recovery": "completed",
+  "tickets_after_retry": 1,
+  "run_state": "completed",
+  "audit_chain_valid": true,
+  "events": [
+    {
+      "seq": 1,
+      "run_id": "615f1ce3f2fd4509b50695ceefdd42a3",
+      "kind": "proposal_created",
+      "data": "{\"evidence_ids\":[\"checkout-latency\"],\"plan_hash\":\"de8e0b66816a886c856e003bc694beef11b0ce929b8a3002545429d31d6cb7ea\"}",
+      "created": 1794894449.268352,
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "event_hash": "8eeece87273175f79f450d8256e12a8e9bdb35285950f0ffabe618b63de211fd"
+    },
+    {
+      "seq": 2,
+      "run_id": "615f1ce3f2fd4509b50695ceefdd42a3",
+      "kind": "approved",
+      "data": "{\"plan_hash\":\"de8e0b66816a886c856e003bc694beef11b0ce929b8a3002545429d31d6cb7ea\",\"reviewer\":\"reviewer\"}",
+      "created": 1794894449.268352,
+      "previous_hash": "8eeece87273175f79f450d8256e12a8e9bdb35285950f0ffabe618b63de211fd",
+      "event_hash": "4cd9ca34ed5bccaa192718da22c22927f7396fb9f6657b56e178b9052485abb4"
+    },
+    {
+      "seq": 3,
+      "run_id": "615f1ce3f2fd4509b50695ceefdd42a3",
+      "kind": "delivery_claimed",
+      "data": "{\"attempt\":1}",
+      "created": 1794894449.268352,
+      "previous_hash": "4cd9ca34ed5bccaa192718da22c22927f7396fb9f6657b56e178b9052485abb4",
+      "event_hash": "20fcda78bc35b23acb4df221b881df3adc5b11a8bcb0c1c213e30c441da8ac4b"
+    },
+    {
+      "seq": 4,
+      "run_id": "615f1ce3f2fd4509b50695ceefdd42a3",
+      "kind": "delivery_claimed",
+      "data": "{\"attempt\":2}",
+      "created": 1794894480.268352,
+      "previous_hash": "20fcda78bc35b23acb4df221b881df3adc5b11a8bcb0c1c213e30c441da8ac4b",
+      "event_hash": "2310e85671f8da97276d8291491ffe78ccb0d8566ba82f88c446c687413b692c"
+    },
+    {
+      "seq": 5,
+      "run_id": "615f1ce3f2fd4509b50695ceefdd42a3",
+      "kind": "delivery_completed",
+      "data": "{}",
+      "created": 1794894480.268352,
+      "previous_hash": "2310e85671f8da97276d8291491ffe78ccb0d8566ba82f88c446c687413b692c",
+      "event_hash": "ac5217c76061725f565d6565c542762676b4fc220daf8024ce6328feca0152d3"
+    }
+  ]
+}

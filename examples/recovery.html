@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Approval Ledger - recovery evidence</title><style>body{font:16px system-ui;color:#192a35;background:#f3f5f4;max-width:1000px;margin:48px auto;padding:20px}h1{font-size:40px}p{line-height:1.7}.card{padding:24px;background:white;border-radius:12px;margin:18px 0}li{padding:14px;border-left:3px solid #26776b;list-style:none}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}</style>
+<p>LOCAL ENGINEERING EXPERIMENT</p><h1>The worker crashed.<br>The ticket was created once.</h1>
+<p>A deterministic planner proposed an action. A separate reviewer approved its exact payload.
+The worker committed to a separate ticket database, then crashed before acknowledging delivery.
+After the lease expired, a restarted worker retried the same idempotency key.</p>
+<div class="card"><b>Tickets before recovery: 1 &nbsp; / &nbsp; After retry: 1</b><p>Final workflow: completed. Audit chain valid: True.</p></div>
+<div class="card"><h2>Event timeline</h2><ol><li><b>proposal_created</b><pre>{&quot;evidence_ids&quot;:[&quot;checkout-latency&quot;],&quot;plan_hash&quot;:&quot;de8e0b66816a886c856e003bc694beef11b0ce929b8a3002545429d31d6cb7ea&quot;}</pre></li><li><b>approved</b><pre>{&quot;plan_hash&quot;:&quot;de8e0b66816a886c856e003bc694beef11b0ce929b8a3002545429d31d6cb7ea&quot;,&quot;reviewer&quot;:&quot;reviewer&quot;}</pre></li><li><b>delivery_claimed</b><pre>{&quot;attempt&quot;:1}</pre></li><li><b>delivery_claimed</b><pre>{&quot;attempt&quot;:2}</pre></li><li><b>delivery_completed</b><pre>{}</pre></li></ol></div>
+<p>No LLM was called. This validates transaction/recovery behavior, not model quality or production scale.
+The receiver's durable idempotency contract is necessary for the single-effect outcome.</p></html>
